@@ -1,0 +1,10 @@
+# robots.txt!
+
+User-agent: Mediapartners-Google*
+Disallow:
+
+User-agent: *
+
+# Less stuff!
+Crawl-Delay: 5
+Request-rate: 1/5             # one document every 2 seconds
