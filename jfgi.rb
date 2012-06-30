@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'rubygems'
 require 'sinatra'
 require 'haml'
@@ -8,8 +10,8 @@ end
 
 get '/search/:query' do
 	haml	:search
-#	sleep 15
-#	redirect to("http://www.google.com/search?q=#{params[:query]}")
+	sleep 15
+	redirect to("http://www.google.com/search?q=#{params[:query]}")
 end
 
 get '/info' do
