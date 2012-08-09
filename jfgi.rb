@@ -9,7 +9,7 @@ get '/' do
 end
 
 get '/search/:query' do
-	haml	:search
+	haml	:index
 	sleep 15
 	redirect to("http://www.google.com/search?q=#{params[:query]}")
 end
