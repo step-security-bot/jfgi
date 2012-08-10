@@ -1,6 +1,6 @@
 # Confid.ru file for Heroku.
 #
 
-require 'jfgi'
+require './jfgi'
 
 run Sinatra::Application
