@@ -13,7 +13,7 @@ end
 
 get '/search/:query' do
         hit_counter += 1
-	haml	:index, :format => :html5
+	haml	:search, :locals => { :query => params[:query], :hit_counter => hit_counter}, :format => :html5
 	sleep 15
 	redirect to("http://www.google.com/search?q=#{params[:query]}")
 end
