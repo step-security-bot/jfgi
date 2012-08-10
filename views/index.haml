@@ -73,6 +73,11 @@
  %p
   By the way, http://www.justfuckinggoogleit.com/search/foo bar will show this page and then redirect users to the Google page for searching on "foo bar", as will many other variants.
 
+
+ %p
+  Idiots Served: #{h hit_counter}
+
+
 Search Google
 %center
  %form{:action => "http://www.google.com/custom", :method => "get", :target => "_top"}
