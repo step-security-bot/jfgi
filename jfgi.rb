@@ -22,18 +22,21 @@ configure do
   DataMapper.auto_upgrade!
 end
 
+before do
+  counter = Counter.get(1) || Counter.create(:time => Time.now, :hits => 1)
+end
 
-counter = Counter.get(1) || Counter.create(:time => Time.now, :hits => 1) 
-hit_counter = counter.hits.to_i
+#hit_counter = counter.hits.to_i
 time_delay = 15
+
 get '/' do
         update_counter(counter)
-	haml 	:index, :locals => { :hit_counter => hit_counter }, :format => :html5
+	haml 	:index, :locals => { :hit_counter => counter.hits }, :format => :html5
 end
 
 get '/search/:query' do
         update_counter(counter)
-	haml	:search, :locals => { :query => params[:query], :hit_counter => hit_counter, :time_delay => time_delay}, :format => :html5
+	haml	:search, :locals => { :query => params[:query], :hit_counter => counter.hits, :time_delay => time_delay}, :format => :html5
 end
 
 get '/info' do
