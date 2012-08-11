@@ -24,7 +24,7 @@ end
 
 
 counter = Counter.get(1) || Counter.create(:time => Time.now, :hits => 1) 
-hits_counter = counter.hits.to_i
+hit_counter = counter.hits.to_i
 time_delay = 15
 get '/' do
         update_counter(counter)
