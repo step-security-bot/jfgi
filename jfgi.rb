@@ -18,7 +18,7 @@ def update_counter(counter)
 end
 
 configure do
-  DataMapper.setup(:default, (ENV["DATABASE_URL"] ||'postgres://localhost/mydb'))
+  DataMapper.setup(:default, (ENV["HEROKU_POSTGRESQL_ONYX_URL"] ||'postgres://localhost/mydb'))
   DataMapper.auto_upgrade!
 end
 
