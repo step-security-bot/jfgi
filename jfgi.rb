@@ -3,6 +3,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'haml'
+require './helpers'
 
 hit_counter = update_counter 
 time_delay = 15
@@ -19,11 +20,4 @@ end
 get '/info' do
         update_counter
 	haml :info, :format => :html5
-end
-
-def update_counter
-  current_count = ENV['HITS'].to_i
-  new_count = current_count + 1
-  ENV['HITS'] = new_count.to_s
-  return new_count
 end
