@@ -19,7 +19,7 @@ end
 
 configure do
   DataMapper.setup(:default, (ENV["DATABASE_URL"] ||'postgres://localhost/mydb'))
-  DataMapper.autoupgrade!
+  DataMapper.auto_upgrade!
 end
 
 
