@@ -30,16 +30,16 @@ end
 time_delay = 15
 
 get '/' do
-        update_counter(counter)
+        update_counter(@counter)
 	haml 	:index, :locals => { :hit_counter => @counter.hits }, :format => :html5
 end
 
 get '/search/:query' do
-        update_counter(counter)
+        update_counter(@counter)
 	haml	:search, :locals => { :query => params[:query], :hit_counter => @counter.hits, :time_delay => time_delay}, :format => :html5
 end
 
 get '/info' do
-        update_counter(counter)
+        update_counter(@counter)
 	haml :info, :format => :html5
 end
