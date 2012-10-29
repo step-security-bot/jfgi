@@ -43,3 +43,8 @@ get '/info' do
         update_counter(@counter)
 	haml :info, :format => :html5
 end
+
+get '/mail' do
+        update_counter(@counter)
+	haml :mail, :format => :html5
+end
