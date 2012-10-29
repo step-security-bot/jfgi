@@ -1,4 +1,4 @@
-#Just Ducking Google It
+#Just Fucking Google It
 
 ##Purpose
 This is a small sinatra rewrite of the old Just Fucking Google It
