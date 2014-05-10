@@ -3,5 +3,5 @@
 
 require './jfgi'
 $stdout.sync = true
-use NewRelic::Rack::DeveloperMode
+#use NewRelic::Rack::DeveloperMode
 run Sinatra::Application
