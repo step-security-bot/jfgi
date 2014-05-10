@@ -20,6 +20,7 @@ end
 configure do
   DataMapper.setup(:default, (ENV["HEROKU_POSTGRESQL_ORANGE_URL"] ||'postgres://jfgi:jfgi@localhost/jfgi'))
   DataMapper.auto_upgrade!
+  require 'newrelic_rpm'
 end
 
 before do
