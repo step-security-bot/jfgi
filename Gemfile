@@ -3,7 +3,7 @@
 
 source 'http://rubygems.org'
 
-ruby '2.1.1'
+ruby '2.1.10'
 
 gem 'sinatra', '1.4.5'
 gem 'haml',  '4.1.0.beta.1'
