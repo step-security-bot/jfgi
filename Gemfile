@@ -3,13 +3,13 @@
 
 source 'http://rubygems.org'
 
-ruby '2.1.10'
+ruby '2.6.3'
 
-gem 'sinatra', '1.4.5'
-gem 'haml',  '4.1.0.beta.1'
-gem 'datamapper', '1.2.0'
-gem 'pg', '0.17.1'
-gem 'dm-postgres-adapter', '1.2.0'
+gem 'sinatra'
+gem 'haml'
+gem 'datamapper'
+gem 'pg'
+gem 'dm-postgres-adapter'
 gem 'newrelic_rpm'
-gem 'html2haml', '1.0.1'
-gem 'haml-contrib', '1.0.0.1'
+gem 'html2haml'
+gem 'haml-contrib'
