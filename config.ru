@@ -1,5 +1,11 @@
-# Confid.ru file for Heroku.
+# Config.ru file for Heroku.
 #
+
+require 'rubygems'
+require 'bundler'
+
+
+Bundler.require
 
 require './jfgi'
 $stdout.sync = true
