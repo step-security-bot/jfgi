@@ -3,7 +3,7 @@
 
 source 'http://rubygems.org'
 
-ruby '2.6.3'
+ruby '2.6.8'
 
 gem 'sinatra'
 gem 'haml'
