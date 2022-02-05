@@ -1,4 +1,6 @@
-import { Logo } from './logo'
+/** @format */
+
+import { Logo } from "./logo";
 
 export function App() {
   return (
@@ -16,5 +18,5 @@ export function App() {
         </a>
       </p>
     </>
-  )
+  );
 }

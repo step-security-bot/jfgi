@@ -1,1 +1,3 @@
-import JSX = preact.JSX
+/** @format */
+
+import JSX = preact.JSX;
