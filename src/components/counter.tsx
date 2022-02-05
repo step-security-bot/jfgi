@@ -6,7 +6,7 @@ import { doc, setDoc, getDoc } from "firebase/firestore";
 import { increment } from "firebase/firestore";
 
 type CounterState = {
-  count: number;
+  count: number | undefined;
 };
 
 type CounterProps = {};
@@ -14,8 +14,6 @@ type CounterProps = {};
 async function getCount(): Promise<number> {
   const docRef = doc(firestore, "count", "visitors");
   const visitors = await getDoc(docRef);
-  console.log("object returned from async function", visitors.data());
-  console.log("count data once resolved", visitors.data()!.count);
   return visitors.data()!.count;
 }
 
@@ -23,18 +21,21 @@ class Counter extends Component<CounterProps, CounterState> {
   constructor(propes: CounterProps) {
     super();
     this.state = {
-      count: 0,
+      count: undefined,
     };
   }
 
-  async commponentDidMount() {
-    const count = await getCount();
-    this.setState({ count });
+  async componentDidMount() {
+    const docRef = doc(firestore, "count", "visitors");
+    const visitors = await getDoc(docRef);
+    const count = visitors.data()!.count;
+    this.setState({ count: count + 1 });
+    await setDoc(docRef, { count: count + 1 });
   }
 
   render() {
     return (
-      <div>
+      <div class="flex bg-green-200">
         <p>Visitors: {this.state.count}</p>
       </div>
     );
