@@ -1,6 +1,7 @@
 /** @format */
 
 import { Logo } from "./logo";
+import { app } from "./utils/app";
 
 export function App() {
   return (
