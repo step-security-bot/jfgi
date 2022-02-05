@@ -1,11 +1,11 @@
 /** @format */
 
 import { app } from "../utils/firebase";
+import Counter from "./counter";
 
 export function App() {
   return (
     <>
-      <Logo />
       <p>Hello Vite + Preact!</p>
       <p>
         <a
@@ -17,6 +17,7 @@ export function App() {
           Learn Preact
         </a>
       </p>
+      <Counter />
     </>
   );
 }
