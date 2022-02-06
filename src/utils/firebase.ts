@@ -1,3 +1,9 @@
+/**
+ *  istanbul ignore file
+ *
+ * @format
+ */
+
 /** @format */
 
 // Import the firebase module and necessary APIs
