@@ -1,6 +1,5 @@
 /** @format */
 
-import { app } from "../utils/firebase";
 import Counter from "./counter";
 import Header from "./header";
 import Bart from "./bart";
