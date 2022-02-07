@@ -1,12 +1,12 @@
 /** @format */
-import { h, render, Component } from "preact";
+import { h, Fragment, FunctionComponent } from "preact";
 
-function Bart(): JSX.Element {
+const Bart: FunctionComponent = () => {
   return (
     <>
       <p>Bart Component</p>
     </>
   );
-}
+};
 
 export default Bart;

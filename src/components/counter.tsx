@@ -1,6 +1,6 @@
 /** @format */
 
-import { h, Component } from "preact";
+import { Component } from "preact/compat";
 import { firestore } from "../utils/firebase";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 
@@ -11,7 +11,7 @@ type CounterState = {
 type CounterProps = Record<string, never>;
 
 class Counter extends Component<CounterProps, CounterState> {
-  constructor(props: CounterProps) {
+  constructor() {
     super();
     this.state = {
       count: undefined,

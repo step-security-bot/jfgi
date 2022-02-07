@@ -1,14 +1,12 @@
 /** @format */
-import { h, render, Component } from "preact";
+import { h, Fragment, FunctionComponent } from "preact";
 
-type InformationProps = Record<string, never>;
-
-function Information(props: InformationProps): JSX.Element {
+const Information: FunctionComponent = () => {
   return (
     <>
       <p>Information Component</p>
     </>
   );
-}
+};
 
 export default Information;

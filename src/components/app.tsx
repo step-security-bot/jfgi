@@ -1,9 +1,9 @@
 /** @format */
 
-import Counter from "./counter";
-import Header from "./header";
-import Bart from "./bart";
-import Information from "./information";
+import Counter from "/~/components/counter";
+import Header from "/~/components/header";
+import Bart from "/~/components/bart";
+import Information from "/~/components/information";
 
 export function App() {
   return (
