@@ -1,20 +1,18 @@
 /** @format */
 
-import { Component } from "preact/compat";
 import { firestore } from "../utils/firebase";
+import { Component } from "preact";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 
 type CounterState = {
-  count: number | undefined;
+  visitorCount: number;
 };
 
-type CounterProps = Record<string, never>;
-
-class Counter extends Component<CounterProps, CounterState> {
+class Counter extends Component<never, CounterState> {
   constructor() {
     super();
     this.state = {
-      count: undefined,
+      visitorCount: 0,
     };
   }
 
@@ -22,16 +20,15 @@ class Counter extends Component<CounterProps, CounterState> {
     const docRef = doc(firestore, "count", "visitors");
     const visitors = await getDoc(docRef);
     const count = visitors.data()?.count;
-    this.setState({ count: count + 1 });
+    this.setState({ visitorCount: count + 1 });
     await setDoc(docRef, { count: count + 1 });
   }
 
   render() {
+    const visitorCount = this.state.visitorCount;
     return (
       <>
-        <div class="flex bg-green-200">
-          <p>Visitors: {this.state.count}</p>
-        </div>
+        <span>Visitor Count: {visitorCount}</span>
       </>
     );
   }

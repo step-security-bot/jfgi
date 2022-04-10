@@ -4,7 +4,7 @@ import { h, Fragment, FunctionComponent } from "preact";
 const Bart: FunctionComponent = () => {
   return (
     <>
-      <p>Bart Component</p>
+      <img src="../assets/images/bart.gif" alt="Bart with a chalkboard" />
     </>
   );
 };
