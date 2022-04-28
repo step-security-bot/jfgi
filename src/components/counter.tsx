@@ -1,14 +1,14 @@
 /** @format */
 
 import { firestore } from "../utils/firebase";
-import { Component } from "preact";
+import { PureComponent } from "preact/compat";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 
 type CounterState = {
   visitorCount: number;
 };
 
-class Counter extends Component<never, CounterState> {
+class Counter extends PureComponent<unknown, CounterState> {
   constructor() {
     super();
     this.state = {

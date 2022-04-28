@@ -11,7 +11,7 @@ export function App() {
       <Header />
       <Bart />
       <Information />
-      <Counter />
+      <Counter props = never/>
     </>
   );
 }
