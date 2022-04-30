@@ -1,7 +1,6 @@
 <template>
   <div id="timer" class="timer">
     <p class="text-xl justify-center">{{ timeout }} seconds remaining</p>
-    <p>Current URL: {{ url }}</p>
     <p>Current Query: {{ query }}</p>
   </div>
 </template>
@@ -14,12 +13,11 @@ export default defineComponent({
   data() {
     return {
       timeout: 30,
-      url: window.location.href,
     };
   },
   computed: {
     query(): string {
-      const url = this.url;
+      const url = window.location.href;
       const query = url.split("/").pop();
       if (query) {
         return query;
