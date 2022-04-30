@@ -1,6 +1,6 @@
 <template>
   <div class="bg-slate rounded-sm flex">
-    <p>Please google shit on your own.</p>
+    <p>Make sure you Google stuff yourself first.</p>
   </div>
 </template>
 
