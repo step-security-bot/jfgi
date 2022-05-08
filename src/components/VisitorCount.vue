@@ -4,9 +4,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { firestore, database } from "../utils/firestore";
+import { firestore } from "../utils/firestore";
 import { doc, setDoc, getDoc } from "firebase/firestore/lite";
-import { ref, get, set } from "firebase/database";
 
 export default defineComponent({
   name: "VisitorCount",
@@ -16,15 +15,11 @@ export default defineComponent({
     };
   },
   async created() {
-    const visitorRef = ref(database, "visitors");
-    get(visitorRef).then((snapshot) => {
-      if (snapshot.exists()) {
-        const count = snapshot.val();
-        set(visitorRef, count + 1);
-      } else {
-        set(visitorRef, 1);
-      }
-    });
+    const docRef = doc(firestore, "count", "visitors");
+    const visitors = await getDoc(docRef);
+    const count = visitors.data()?.count;
+    this.visitorCount = count;
+    await setDoc(docRef, { count: count + 1 });
   },
 });
 </script>
