@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts">
 import Header from "./components/Header.vue";
 import Timer from "./components/Timer.vue";
 import Reprimand from "./components/Reprimand.vue";
