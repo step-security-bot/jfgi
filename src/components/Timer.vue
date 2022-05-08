@@ -1,7 +1,7 @@
 <template>
   <div id="timer" class="timer">
     <p class="text-xl justify-center">{{ timeout }} seconds remaining</p>
-    <p>Current Query: {{ query }}</p>
+    <p>Current Query: {{ decodeURI(query) }}</p>
   </div>
 </template>
 
