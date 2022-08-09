@@ -1,5 +1,4 @@
 import adapter from '@sveltejs/adapter-static';
-import firebase from 'svelte-adapter-firebase';
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
