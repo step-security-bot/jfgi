@@ -50,8 +50,18 @@ jobs:
         run: pnpm run build
       - name: Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
+        id: deploy
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JFGI_SITE }}'
           projectId: jfgi-site
           channelId: preview
+      - name: Create Issue
+        uses: dblock/create-a-github-issue@v3
+        if: ${{ success() }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PREVIEW_URL: ${{ steps.deploy.outputs.summary }}
+          EXPIRES_AT: ${{ steps.deploy.outputs.expires_time }}
+        with:
+          filename: .github/PREVIEW_TEMPLATE.md
