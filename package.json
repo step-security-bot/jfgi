@@ -28,7 +28,6 @@
 		"postcss": "^8.4.16",
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.1",
-		"prisma": "^4.4.0",
 		"svelte": "^3.50.1",
 		"svelte-adapter-firebase": "^0.14.4",
 		"svelte-check": "^2.9.1",
@@ -40,7 +39,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@prisma/client": "^4.4.0",
 		"firebase": "^9.10.0"
 	}
 }
