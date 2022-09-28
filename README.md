@@ -1,38 +1,16 @@
-# create-svelte
+# Just \*\*\*\*\*\* Google It
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is a simple website that you can use to redirect some when someone is too stupid to use google themselves
 
-## Creating a project
+## How to use
 
-If you're seeing this, you've probably already done this step. Congrats!
+- You can use the website directly at [https://justgoogleit.com](https://justgoogleit.com)
+- Append a search term to the url to redirect to google with that search term: [https://justgoogleit.com/what+is+the+meaning+of+life](https://justgoogleit.com/what+is+the+meaning+of+life)
+- You can also use the url as a redirect url in your email signature or on your website
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## URLs
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- [https://justgoogleit.com](https://justgoogleit.com)
+- [https://justfuckinggoogleit.com](https://justfuckinggoogleit.com)
+- [https://www.justgoogleit.com](https://www.justgoogleit.com)
+- [https://www.justfuckinggoogleit.com](https://www.justfuckinggoogleit.com)
