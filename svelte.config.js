@@ -18,7 +18,9 @@ const config = {
 		}),
 		alias: {
 			$src: './src',
-			$components: './src/components'
+			$components: './src/components',
+			$utils: './src/utils',
+			$types: './src/types'
 		}
 	}
 };
