@@ -61,7 +61,7 @@ jobs:
         if: ${{ success() }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PREVIEW_URL: ${{ steps.deploy.outputs.summary }}
-          EXPIRES_AT: ${{ steps.deploy.outputs.expires_time }}
+          PREVIEW_URL: ${{ steps.deploy.outputs.details_url }}
+          EXPIRES_AT: ${{ steps.deploy.outputs.expire_time }}
         with:
           filename: .github/PREVIEW_TEMPLATE.md
