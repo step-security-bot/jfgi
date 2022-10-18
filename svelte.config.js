@@ -5,6 +5,9 @@ import preprocess from 'svelte-preprocess';
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
+	compilerOptions: {
+		enableSourcemap: true
+	},
 	preprocess: [
 		preprocess({
 			postcss: true
