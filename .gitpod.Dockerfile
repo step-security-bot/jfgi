@@ -14,6 +14,8 @@ RUN brew install \
     direnv \
     commitizen \
     kubectl \
-    kubecost \
+    kubectx \
+    k9s \
     infracost \
-    awscli
+    awscli \
+    tree
