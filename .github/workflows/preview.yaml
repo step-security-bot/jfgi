@@ -77,6 +77,8 @@ jobs:
           projectId: jfgi-site
           channelId: preview
           expires: ${{ steps.validity.outputs.validity }}
+      - name: Inject slug/short variables
+        uses: rlespinasse/github-slug-action@v4
       - name: Create Issue
         uses: dblock/create-a-github-issue@v3
         if: ${{ success() }}
@@ -84,5 +86,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PREVIEW_URL: ${{ steps.deploy.outputs.details_url }}
           EXPIRES_AT: ${{ steps.deploy.outputs.expire_time }}
+          COMMIT_SHA: ${{ env.GITHUB_SHA_SHORT }}
+          BRANCH: ${{ github.ref_name }}
         with:
           filename: .github/PREVIEW_TEMPLATE.md

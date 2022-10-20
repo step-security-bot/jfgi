@@ -1,5 +1,5 @@
 ---
-title: Preview Deployed
+title: Preview Deployed for {{ env.COMMIT_REF }} on {{ env.BRANCH }}
 assignees: AliSajid
 labels: preview
 ---
