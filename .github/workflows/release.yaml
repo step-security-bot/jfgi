@@ -33,11 +33,11 @@ jobs:
       pull-requests: write
       checks: write
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - uses: pnpm/action-setup@v2.1.0
+      - uses: pnpm/action-setup@v2.2.4
         with:
           version: 7.0.0
           run_install: false
@@ -57,7 +57,7 @@ jobs:
       - name: Build
         run: pnpm run build
       - name: Deploy
-        uses: FirebaseExtended/action-hosting-deploy@v0.5-alpha
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '{{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '{{ secrets.FIREBASE_SERVICE_ACCOUNT_JFGI_SITE }}'

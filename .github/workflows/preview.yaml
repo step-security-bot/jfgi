@@ -45,11 +45,11 @@ jobs:
       checks: write
       actions: write
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - uses: pnpm/action-setup@v2.1.0
+      - uses: pnpm/action-setup@v2.2.4
         with:
           version: 7.0.0
           run_install: false
@@ -71,9 +71,9 @@ jobs:
       - name: Convert validity to acceptable format
         id: validity
         run: |
-          echo "::set-output name=validity::$(echo '${{ github.event.inputs.validity }}' | sed 's/ day\(s\)\?/d/')"
+          echo "validity=$(echo '${{ github.event.inputs.validity }}' | sed 's/ day\(s\)\?/d/')" >> $GITHUB_OUTPUT
       - name: Deploy
-        uses: FirebaseExtended/action-hosting-deploy@v0
+        uses: FirebaseExtended/action-hosting-deploy@0.7.0
         id: deploy
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
