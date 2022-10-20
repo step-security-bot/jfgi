@@ -78,6 +78,7 @@ jobs:
           channelId: preview
           expires: ${{ steps.validity.outputs.validity }}
       - name: Inject slug/short variables
+        id: slugs
         uses: rlespinasse/github-slug-action@v4
       - name: Create Issue
         uses: dblock/create-a-github-issue@v3
