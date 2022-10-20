@@ -2,6 +2,8 @@
   import { page } from '$app/stores';
 
   let mySearchQuery = $page.params.query;
+
+  console.log(mySearchQuery);
 </script>
 
 <div class="flex justify-center p-4">
