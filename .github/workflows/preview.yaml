@@ -14,7 +14,7 @@ on:
         required: true
         type: choice
         options: ['preview', 'live']
-        default: 'live'
+        default: 'preview'
       validity:
         description: 'Validity of the preview'
         required: true
@@ -69,7 +69,7 @@ jobs:
         run: |
           echo "validity=$(echo '${{ github.event.inputs.validity }}' | sed 's/ day\(s\)\?/d/')" >> $GITHUB_OUTPUT
       - name: Deploy
-        uses: FirebaseExtended/action-hosting-deploy@0
+        uses: FirebaseExtended/action-hosting-deploy@v0
         id: deploy
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
