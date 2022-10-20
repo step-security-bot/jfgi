@@ -2,17 +2,16 @@ tasks:
   - init: pnpm install && pnpm run build
     command: pnpm run dev
 
-
 image:
   file: .gitpod.Dockerfile
 
 ports:
   - name: App Develop
-    description: "App Development Port with HMR"
+    description: 'App Development Port with HMR'
     port: 5173
     onOpen: open-browser
   - name: App Preview
-    description: "App Preview Port based on Build"
+    description: 'App Preview Port based on Build'
     port: 4173
     onOpen: ignore
 

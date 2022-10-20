@@ -1,5 +1,5 @@
 type Counter = {
-	count: number;
+  count: number;
 };
 
 export default Counter;
