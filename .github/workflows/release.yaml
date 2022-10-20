@@ -1,9 +1,23 @@
 name: Deploy Release to Firebase Hosting
 on:
-  - release
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'main'
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        type: choice
+        options: ['preview', 'live']
+        default: 'live'
 
 jobs:
   release_deploy:
+    name: Deploy Release to Firebase Hosting
     runs-on: ubuntu-latest
     env:
       VITE_FIREBASE_API_KEY: ${{secrets.FIREBASE_API_KEY}}
@@ -48,4 +62,4 @@ jobs:
           repoToken: '{{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '{{ secrets.FIREBASE_SERVICE_ACCOUNT_JFGI_SITE }}'
           projectId: jfgi-site
-          channelId: live
+          channelId: ${{ github.event.inputs.environment }}

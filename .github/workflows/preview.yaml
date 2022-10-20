@@ -2,13 +2,33 @@ name: Deploy Preview to Firebase Hosting
 on:
   push:
     branches:
-      - main
+      - '*'
+      - '!main'
   pull_request:
     branches:
-      - main
+      - 'main'
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'main'
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        type: choice
+        options: ['preview', 'live']
+        default: 'live'
+      validity:
+        description: 'Validity of the preview'
+        required: true
+        type: choice
+        options: ['1 day', '3 days', '7 days', '14 days', '30 days']
+        default: '7 days'
 
 jobs:
   preview_deploy:
+    name: Deploy Preview to Firebase Hosting
     runs-on: ubuntu-latest
     env:
       VITE_FIREBASE_API_KEY: ${{secrets.FIREBASE_API_KEY}}
@@ -48,6 +68,10 @@ jobs:
         run: pnpm install
       - name: Build
         run: pnpm run build
+      - name: Convert validity to acceptable format
+        id: validity
+        run: |
+          echo "::set-output name=validity::$(echo '${{ github.event.inputs.validity }}' | sed 's/ day\(s\)\?/d/')"
       - name: Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         id: deploy
@@ -56,6 +80,7 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JFGI_SITE }}'
           projectId: jfgi-site
           channelId: preview
+          expires: ${{ steps.validity.outputs.validity }}
       - name: Create Issue
         uses: dblock/create-a-github-issue@v3
         if: ${{ success() }}
