@@ -28,7 +28,7 @@ const createCollection = <T = DocumentData>(collectionName: string) => {
 };
 
 // Add the cont type
-import type Counter from '$types/Counter';
+import type { Counter } from '$types/Counter';
 const countersCollection = createCollection<Counter>('count');
 
 export { app, firestore, countersCollection, analytics, performance };

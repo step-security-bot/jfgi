@@ -2,4 +2,4 @@ type Counter = {
   count: number;
 };
 
-export default Counter;
+export type { Counter };

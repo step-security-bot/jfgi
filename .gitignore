@@ -10,3 +10,4 @@ archived/
 .firebase/
 /public
 *.log
+.vercel
