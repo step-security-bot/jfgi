@@ -37,7 +37,7 @@
       {:then count}
         <span id="visitor-count" class="text-lg font-bold">{count}</span>
       {:catch error}
-        <span id="visitor-count" class="text-lg font-bold text-red-600">error</span>
+        <span id="visitor-count" class="text-lg font-bold text-red-600">{error}</span>
       {/await}
     </span>
   </p>
