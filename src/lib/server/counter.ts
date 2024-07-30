@@ -1,5 +1,5 @@
 import { doc, getDoc, setDoc } from 'firebase/firestore';
-import { countersCollection } from '$lib/server/firebase';
+import { countersCollection } from '$lib/firebase';
 
 const getVisitors = async () => {
   const counterRef = doc(countersCollection, 'visitors');

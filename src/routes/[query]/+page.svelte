@@ -1,7 +1,14 @@
 <script lang="ts">
+  import { browser } from '$app/environment';
   import { page } from '$app/stores';
 
   let mySearchQuery = $page.params.query;
+
+  setTimeout(() => {
+    if (browser) {
+      window.location.href = `https://www.google.com/search?q=${mySearchQuery}`;
+    }
+  }, 10000);
 
   console.log(mySearchQuery);
 </script>

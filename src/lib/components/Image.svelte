@@ -13,6 +13,6 @@
   export const src = `${assets}/images/${images[index]}`;
 </script>
 
-<div class="object-center">
-  <img {src} class="mx-auto my-auto h-20 object-contain p-4" alt="Placeholder" />
+<div class="carousel mx-auto px-4">
+  <img {src} class="mx-auto my-auto w-6/12 object-contain" alt="Placeholder" />
 </div>

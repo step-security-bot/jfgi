@@ -4,11 +4,11 @@
   export let count: Counter;
 </script>
 
-<div class="flex justify-center p-4" id="Counter">
+<div class="flex w-1/6 justify-center p-4" id="Counter">
   <p class="text-lg font-bold">
     Count: <span id="visitor-count" class="text-lg font-bold">
       {#await count}
-        <span id="visitor-count" class="text-lg font-bold">...</span>
+        <span id="visitor-count" class="loading loading-infinity">...</span>
       {:then count}
         <span id="visitor-count" class="text-lg font-bold">{count.count}</span>
       {:catch error}
