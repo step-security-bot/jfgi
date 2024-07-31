@@ -1,0 +1,38 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "assignees": ["AliSajid"],
+  "baseBranches": ["next"],
+  "extends": ["config:best-practices", "group:githubArtifactActions", ":rebaseStalePrs"],
+  "labels": ["dependencies", "renovate"],
+  "packageRules": [
+    {
+      "automerge": true,
+      "groupName": "Repository Maintenance",
+      "groupSlug": "repository-maintenance",
+      "matchManagers": ["pre-commit", "github-actions"],
+      "automergeSchedule": ["at any time"]
+    },
+    {
+      "automerge": true,
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"]
+    }
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "recreateWhen": "always",
+    "rebaseStalePrs": true,
+    "branchTopic": "lock-file-maintenance",
+    "commitMessageAction": "Lock file maintenance",
+    "prBodyDefinitions": {
+      "Change": "All locks refreshed"
+    }
+  },
+  "platformCommit": true,
+  "pre-commit": {
+    "enabled": true
+  },
+  "prHourlyLimit": 5,
+  "schedule": ["after 8pm every weekday", "before 8am every weekday", "every saturday"],
+  "semanticCommits": "enabled"
+}
