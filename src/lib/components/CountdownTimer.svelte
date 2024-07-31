@@ -1,14 +1,38 @@
 <script lang="ts">
+  import { browser } from '$app/environment';
   export let timer: number = 10;
 
-  let time = timer;
+  let duration: number = timer * 1000;
+  let elapsed: number = duration;
+  let currentSecond: number = Math.round(elapsed / 1000);
+  let currentProgress: number = 100 - (elapsed / duration) * 100;
 
-  const interval = setInterval(() => {
-    time -= 1;
-    if (time === 0) {
-      clearInterval(interval);
-    }
-  }, 1000);
+  let frame;
+  if (browser) {
+    let lastTime: number = window.performance.now();
+
+    (function update() {
+      frame = requestAnimationFrame(update);
+
+      const time = window.performance.now();
+
+      elapsed = Math.min(time - lastTime + elapsed, time);
+
+      currentSecond = Math.round((duration - elapsed) / 1000);
+
+      currentProgress = 100 - (elapsed / duration) * 100;
+
+      lastTime = time;
+
+      if (elapsed >= duration) {
+        cancelAnimationFrame(frame);
+      }
+    })();
+  }
 </script>
 
-<h1>{time}</h1>
+<div class="radial-progress" style="--value:{currentProgress};" role="progressbar">
+  <span class="countdown font-mono text-2xl">
+    <span style="--value:{currentSecond}"></span>
+  </span>
+</div>
