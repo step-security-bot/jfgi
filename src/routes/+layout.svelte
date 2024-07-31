@@ -1,10 +1,16 @@
 <script lang="ts" type="module">
-  import '$src/app.css';
-  import Title from '$components/Title.svelte';
-  import Reprimand from '$components/Reprimand.svelte';
-  import Image from '$components/Image.svelte';
-  import VisitorCounter from '$components/VisitorCounter.svelte';
-  import GoogleAd from '$components/GoogleAd.svelte';
+  import '../app.css';
+  import Title from '$lib/components/Title.svelte';
+  import Reprimand from '$lib/components/Reprimand.svelte';
+  import Image from '$lib/components/Image.svelte';
+  import VisitorCounter from '$lib/components/VisitorCounter.svelte';
+  import GoogleAd from '$lib/components/GoogleAd.svelte';
+
+  import type { LayoutData } from './$types';
+
+  export let data: LayoutData;
+
+  let visitorCount = data.count;
 </script>
 
 <div class="flex flex-col">
@@ -13,5 +19,5 @@
   <Reprimand />
   <slot />
   <GoogleAd />
-  <VisitorCounter />
+  <VisitorCounter count={visitorCount} />
 </div>

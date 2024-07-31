@@ -1,12 +1,31 @@
-.DS_Store
 node_modules
-/build
+
+# Output
+.output
+.vercel
 /.svelte-kit
-/package
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
 .env
 .env.*
 !.env.example
-archived/
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Log files
+*.[Ll]og
+
+# Firebase-related files
 .firebase/
-/public
-*.log
+public/
+
+# Unignore the lib/ directory
+!src/lib

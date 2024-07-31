@@ -1,9 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
+// import { getAnalytics } from 'firebase/analytics';
 import { getFirestore, CollectionReference, collection } from 'firebase/firestore';
 import type { DocumentData } from 'firebase/firestore';
-import { getPerformance } from 'firebase/performance';
+// import { getPerformance } from 'firebase/performance';
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -19,8 +19,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
-const analytics = getAnalytics(app);
-const performance = getPerformance(app);
+// const analytics = getAnalytics(app);
+// const performance = getPerformance(app);
 
 // This is just a helper to add the type to the db responses
 const createCollection = <T = DocumentData>(collectionName: string) => {
@@ -28,7 +28,7 @@ const createCollection = <T = DocumentData>(collectionName: string) => {
 };
 
 // Add the cont type
-import type Counter from '$types/Counter';
+import type { Counter } from '$lib/types/Counter';
 const countersCollection = createCollection<Counter>('count');
 
-export { app, firestore, countersCollection, analytics, performance };
+export { app, firestore, countersCollection };
