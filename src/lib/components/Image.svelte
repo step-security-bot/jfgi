@@ -1,4 +1,4 @@
-<script lang="ts" type="module">
+<script lang="ts">
   import yoda from '$lib/components/images/0637f1c2-d890-4510-9e80-830a3ee5ffe3.png?enhanced';
   import drake from '$lib/components/images/cd4cebb4-5acb-45cf-a3cb-a3ba80ba11ba.png?enhanced';
   import officespace from '$lib/components/images/55a4588f-084f-42d1-8a4b-17a11c1859f0.png?enhanced';
