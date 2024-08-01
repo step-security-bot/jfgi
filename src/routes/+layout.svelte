@@ -13,7 +13,7 @@
   let visitorCount = data.count;
 </script>
 
-<div class="flex flex-col">
+<div class="flex size-full h-screen flex-col">
   <Title />
   <Image />
   <Reprimand />
