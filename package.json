@@ -1,9 +1,9 @@
 {
   "name": "jfgi",
-  "version": "0.1.0",
+  "version": "0.9.9",
   "packageManager": "pnpm@9.6.0",
   "scripts": {
-    "dev": "vite dev",
+    "dev": "vite dev --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
     "test": "playwright test",
