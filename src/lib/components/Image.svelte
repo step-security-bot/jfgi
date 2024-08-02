@@ -8,10 +8,13 @@
       imagesrc: yoda,
       alt: "Master Yoda looking at you; Overlay Text says 'Use Google, You Should'"
     },
-    { imagesrc: drake, alt: "Drake looking at you; Overlay Text says 'Use Google, You Should'" },
+    {
+      imagesrc: drake,
+      alt: "Drake meme: Top panel - Drake looking displeased and holding up his hand in rejection with the caption 'Googling the question beforehand.' Bottom panel - Drake smiling and pointing approvingly with the caption 'Asking the question without research.'"
+    },
     {
       imagesrc: officespace,
-      alt: "Office Spacej; Overlay Text says 'Use Google, You Should'"
+      alt: "Office Space meme: A man with glasses and a tie holding a coffee cup, with the caption 'If you could Google this before asking, that'd be great.'"
     }
   ];
   const index = Math.floor(Math.random() * images.length);
