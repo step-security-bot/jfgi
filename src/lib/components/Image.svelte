@@ -24,12 +24,12 @@
   export const src = images[index];
 </script>
 
-<div class="flex-row justify-center object-center">
-  <div class="carousel mx-auto px-4">
+<div class="mx-auto h-full flex-row justify-center object-center">
+  <div class="carousel carousel-vertical mx-auto">
     <enhanced:img
       src={src.imagesrc}
-      sizes="min(1280px, 50vw)"
-      class="mx-auto my-auto w-6/12 object-contain"
+      sizes="min(1280px, 40vw)"
+      class="carousel-item mx-auto w-6/12 object-contain"
       alt={src.alt}
     />
   </div>

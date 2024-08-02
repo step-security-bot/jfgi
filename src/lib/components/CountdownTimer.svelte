@@ -31,8 +31,10 @@
   }
 </script>
 
-<div class="radial-progress" style="--value:{currentProgress};" role="progressbar">
-  <span class="countdown font-mono text-2xl">
-    <span style="--value:{currentSecond}"></span>
-  </span>
+<div class="mx-auto flex-row content-center object-center" id="countdown">
+  <div class="radial-progress" style="--value:{currentProgress};" role="progressbar">
+    <span class="countdown font-mono text-sm lg:text-2xl">
+      <span style="--value:{currentSecond}"></span>
+    </span>
+  </div>
 </div>

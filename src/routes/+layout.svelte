@@ -1,10 +1,8 @@
 <script lang="ts" type="module">
   import '../app.css';
   import Title from '$lib/components/Title.svelte';
-  import Reprimand from '$lib/components/Reprimand.svelte';
   import Image from '$lib/components/Image.svelte';
   import VisitorCounter from '$lib/components/VisitorCounter.svelte';
-  import GoogleAd from '$lib/components/GoogleAd.svelte';
 
   import type { LayoutData } from './$types';
 
@@ -17,8 +15,6 @@
 <div class="flex size-full h-screen flex-col">
   <Title {isExplicit} />
   <Image />
-  <Reprimand />
   <slot />
-  <GoogleAd />
   <VisitorCounter count={visitorCount} />
 </div>

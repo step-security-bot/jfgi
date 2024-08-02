@@ -9,14 +9,18 @@
 
   setTimeout(() => {
     if (browser) {
-      window.location.href = `https://www.google.com/search?q=${mySearchQuery}`;
+      //window.location.href = `https://www.google.com/search?q=${mySearchQuery}`;
     }
   }, timer * 1000);
 
   console.log(mySearchQuery);
 </script>
 
-<div class="mx-auto p-4"><CountdownTimer {timer} /></div>
-<div class="flex justify-center p-4">
-  <h1 class="text-3xl font-extralight">Search Google for <code>{mySearchQuery}</code></h1>
+<CountdownTimer {timer} />
+<div class="flex-row content-center object-center">
+  <div class="flex justify-center p-4">
+    <h1 class="text-sm font-extralight md:text-xl lg:text-3xl">
+      Searching Google for <code>{mySearchQuery}</code>
+    </h1>
+  </div>
 </div>

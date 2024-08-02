@@ -13,22 +13,20 @@
   const suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
 </script>
 
-<footer class="footer footer-center">
-  <div class="divider"></div>
-  <div class="" id="Counter">
-    <div class="badge badge-ghost badge-lg">
-      {formattedCount}
-      {suffix.adjective}
-      {visitorCount === 1 ? suffix.noun.singular : suffix.noun.plural}
-      {suffix.verb}
-    </div>
+<div class="divider"></div>
+<div class="mx-auto flex-row content-center" id="visitorcounter">
+  <div class="badge badge-ghost badge-lg m-2">
+    {formattedCount}
+    {suffix.adjective}
+    {visitorCount === 1 ? suffix.noun.singular : suffix.noun.plural}
+    {suffix.verb}
   </div>
-  <aside class="prose flex-row">
-    <p>
+  <footer class="footer footer-center m-2">
+    <p class="footer-center inline place-content-center p-4 font-mono text-xs">
       Made with <span class="text-red-500">❤️</span> by
       <a class="link link-info" href="https://github.com/AliSajid" target="_blank" rel="noopener"
         >Ali Sajid Imami</a
       >
     </p>
-  </aside>
-</footer>
+  </footer>
+</div>
