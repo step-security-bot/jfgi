@@ -11,5 +11,11 @@ module.exports = {
     require('@tailwindcss/container-queries'),
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     require('daisyui')
-  ]
+  ],
+
+  daisyui: {
+    themes: ['cupcake', 'retro'],
+    darkTheme: 'retro',
+    logs: false
+  }
 };

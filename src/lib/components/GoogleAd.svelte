@@ -2,6 +2,6 @@
   console.log('Google Ad Loaded');
 </script>
 
-<div class="object-center" id="googlead">
-  <img src="https://placehold.co/150" class="mx-auto my-auto p-4" alt="Placeholder" />
+<div class="flex-row content-center object-center" id="googlead">
+  <img src="https://placehold.co/150" class="mx-auto my-2" alt="Placeholder" />
 </div>
