@@ -9,7 +9,7 @@
 
   setTimeout(() => {
     if (browser) {
-      //window.location.href = `https://www.google.com/search?q=${mySearchQuery}`;
+      window.location.href = `https://www.google.com/search?q=${mySearchQuery}`;
     }
   }, timer * 1000);
 
