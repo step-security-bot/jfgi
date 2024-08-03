@@ -1,10 +1,10 @@
 <script lang="ts">
   export let isExplicit: boolean = false;
-  let title: string = 'Just Google It';
+  let title: string = 'Just Google It!';
 
   if (isExplicit) {
-    console.log('Just Fucking Google It');
-    title = 'Just Fucking Google It';
+    console.log('Just Fucking Google It!');
+    title = 'Just Fucking Google It!';
   }
 </script>
 
