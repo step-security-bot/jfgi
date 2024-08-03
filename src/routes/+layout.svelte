@@ -9,7 +9,7 @@
   export let data: LayoutData;
 
   let visitorCount = data.count;
-  let isExplicit = data.explicit.isExplicit;
+  let isExplicit = data.isExplicit;
 </script>
 
 <div class="flex size-full h-screen flex-col">

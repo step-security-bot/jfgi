@@ -4,13 +4,13 @@
 
   export let data: PageData;
 
-  $: isExplicit = data.explicit.isExplicit;
+  const siteName = data.siteName;
 </script>
 
 <svelte:head>
-  <title
-    >{isExplicit ? 'Just Fucking Google It! -- Home Page' : 'Just Google It! -- Home Page'}</title
-  >
+  <title>
+    {siteName} -- Home Page
+  </title>
 </svelte:head>
 
 <Reprimand />
